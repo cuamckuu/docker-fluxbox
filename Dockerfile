@@ -1,9 +1,9 @@
-FROM ubuntu:20.04
+FROM alpine:3.13.5
 
 WORKDIR /browser
 
 # VNC stuff
-RUN apt update && apt install -y x11vnc xvfb fluxbox firefox && rm -rf /var/lib/apt/lists/*
+RUN apk update && apk add --no-cache x11vnc xvfb fluxbox xterm firefox ttf-ubuntu-font-family && rm -rf /tmp/* /var/cache/apk/*
 
 COPY ./extensions/modheader-3.1.22-fx.xpi /browser/modheader-3.1.22-fx.xpi
 COPY ./extensions/editthiscookie2-1.5.0-fx.xpi /browser/editthiscookie2-1.5.0-fx.xpi
