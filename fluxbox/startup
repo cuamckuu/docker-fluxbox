@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+fluxbox &
+fbpid=$!
+
+modheader_url='https://bewisse.com/modheader/p/#NobwRALglhA2CmYBcYAKAnA9gMyggBAIxgA0YAFlACbwDCmAtg-AHYTIToCu8Z58AQxroAzslBhWAgEYIqHbrzAsBzZGACqI+OgC0AQQDmrdmQBuA2D3UBZTAC88sAQHoArADoADPgAUAdSgWKkwAdxF8ADkAFSIvbwBufECWADYAFiSADwyASnx9AAdChH94aQBpGHcAZgB2DxrUvwqACWibABkSfFgoAGt4fABxeABjfsx82nIsZhdU+PiawkIAJg9VmvwAZQFsAXQoWoam0jAxxmY2dTAAXxJwKVl4eSROHjIVNRR9MbH4IUILpOgIWIYuAJjOcLFZEChuLoAEoaHrcBIARwAvPEAJw9Vi6DQ7TE4jwADgJLFJ8Tq50uTBMtzuAF0yOh4CJCq1BMIxEhgGywLhYBAdPzBWQuOhYEjAc4AdcIBKhQJiqwqHYaMgDrBtGRpAIJoYsFxgvRYJh0OoAMTYQheOq4mrnMVZCAWq227A+33nETkK0QaIwBDqYisoA'
+
+sleep 1
+{
+   # Applications you want to run after fluxbox has started
+   # MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN & AT THE END.
+   firefox /browser/editthiscookie2-1.5.0-fx.xpi /browser/modheader-3.1.22-fx.xpi $modheader_url &
+} &
+
+wait $fbpid
